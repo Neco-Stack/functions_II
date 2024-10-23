@@ -40,29 +40,64 @@
 // }
 // displayAlert(1222999, 980000);
 
-type TBankkunde = {
-    name: string; 
-    nachname: string; 
-    wohnort: string; 
-    vermögen: number; 
-};
-function logInCustomerBankDetails(customer: TBankkunde): void {
-    const customerInfo= `
-    Kundendetails: 
-    Name: ${customer.name}
-    Nachname: ${customer.nachname}
-    Wohnort: ${customer.wohnort}
-    Vermögen: ${customer.vermögen}`
-    console.log(customerInfo);
+// type TBankkunde = {
+//     name: string; 
+//     nachname: string; 
+//     wohnort: string; 
+//     vermögen: number; 
+// };
+// function logInCustomerBankDetails(customer: TBankkunde): void {
+//     const customerInfo= `
+//     Kundendetails: 
+//     Name: ${customer.name}
+//     Nachname: ${customer.nachname}
+//     Wohnort: ${customer.wohnort}
+//     Vermögen: ${customer.vermögen}`
+//     console.log(customerInfo);
+// }
+// const kunde: TBankkunde = {
+//     name: "Necati",
+//     nachname: "Abay",
+//     wohnort: "Düsseldorf",
+//     vermögen: 987000000
+// }
+// logInCustomerBankDetails(kunde)
+// console.log("Neco hat soviel geld auf dem konto:", kunde.vermögen);
+
+// console.log("Necat hat ein geschätztes Vermögen:", kunde.vermögen);
+type TPerson = {
+    vorname: string; 
+    nachname: string;
+    alter: number; 
+    familienstand: string; 
+    groesse: number; 
+    zeigeProfil: () => string;
 }
-const kunde: TBankkunde = {
-    name: "Necati",
-    nachname: "Abay",
-    wohnort: "Düsseldorf",
-    vermögen: 987000000
+
+let person: TPerson = {
+    vorname: 'Anton',
+    nachname: 'Fish',
+    alter: 34,
+    familienstand: 'ledig',
+    groesse: 1.78,
+    zeigeProfil: function () {
+         return `Vorname: ${this.vorname}, Nachname:${this.nachname}, alter: ${this.alter}, famlienstand: ${this.familienstand}, Größe: ${this.groesse}`;
+         console.log(person);
+     }
+ };
+ let person2: TPerson = {
+    vorname: "Necati", 
+    nachname: "Abay", 
+    alter: 28,
+    familienstand: "glücklich vergeben", 
+    groesse: 1.65, 
+    zeigeProfil: ()=> {
+        return `Vorname: ${person2.vorname}, Nachname:${person2.nachname}, alter: ${person2.alter}, famlienstand: ${person2.familienstand}, Größe: ${person2.groesse}`
+    } 
 }
-logInCustomerBankDetails(kunde)
-console.log("Necat hat ein geschätztes Vermögen:", kunde.vermögen);
+console.log(person2.zeigeProfil());
+
+
 
 
 
